@@ -1,0 +1,112 @@
+body{
+    background-color: rgba(184, 221, 125, 0.84);
+    text-align: center;
+}
+p,h1,h2,h3,li{
+color: rgb(23, 62, 0);
+}
+img {
+  width: 300px;  /* Set any size (px, %, rem, etc.) */
+  height: auto;  /* Maintains original aspect ratio */
+  border-radius: 15px;
+}
+/* 1. Global styles for all items in the stack */
+p, h1, h2, h3 {
+  box-sizing: content-box;
+  border-left: 2px solid #2a7800; 
+  border-right: 2px solid #2a7800; 
+  background-color: #dcffb4d4; 
+  padding: 10px 20px; /* Reduced vertical padding so text doesn't drift too far apart */
+  max-width: 400px; 
+  color: #123600; 
+  margin: 0 auto; /* Removes top/bottom margins entirely to close the gaps */
+}
+
+/* 2. Cap the very first element in your HTML code */
+p:first-of-type, h1:first-of-type, h2:first-of-type, h3:first-of-type {
+  border-top: 2px solid #2a7800;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 20px; /* Fuller padding at the very top */
+  margin-top: 20px;  /* Spacing above the whole box */
+}
+
+/* 3. Cap the very last element in your HTML code */
+p:last-of-type, h1:last-of-type, h2:last-of-type, h3:last-of-type {
+  border-bottom: 2px solid #2a7800;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-bottom: 20px; /* Fuller padding at the very bottom */
+  margin-bottom: 20px;  /* Spacing below the whole box */
+}
+
+h1{
+    font-family: 'Snell Roundhand';
+    font-size:65px;
+    border-top: 6px solid #FFFFFF;
+    border-bottom: 6px solid #FFFFFF;
+    outline-offset: 25px;
+}
+
+ol {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: contents;
+}
+
+.main-image {
+  width: 50%;
+  height: 50%;
+  object-fit: scale-down;
+  display: block;
+  align-items: center;
+}
+
+/* 2. Hide the button initially using opacity */
+.image-container .hover-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the button */
+  opacity: 0;                        /* Fully invisible */
+  visibility: hidden;               /* Prevents clicking while invisible */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade effect */
+  
+  /* Basic button styling */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 3. Reveal the button when hovering over the CONTAINER */
+.image-container:hover .hover-button {
+  opacity: 1;                       /* Fully visible */
+  visibility: visible;              /* Makes it clickable */
+}
+
+/* Optional: Add a subtle effect when hovering directly over the button itself */
+.image-container .hover-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+ @media (max-width: 1000px){
+    body{
+        background-color: rgb(190, 0, 0);
+    }
+    p,h1,h2,h3,li{
+        color:#FFFFFF;
+    }
+ }
